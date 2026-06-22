@@ -11,36 +11,29 @@
         <h1>🔄 Convertidor de Valores</h1>
 
         <label>Categoría</label>
-        <select>
-            <option>Dev2</option>
-            <option>Dev3</option>
+        <select id="categoria" onchange="actualizarUnidades()">
+            <option value="temperatura">Temperatura</option>
+            <option value="distancia">Distancia</option>
         </select>
 
         <label>Cantidad</label>
-        <input type="number" placeholder="Ingresa un valor">
+        <input type="number" id="cantidad" placeholder="Ingresa un valor">
 
         <div class="row">
             <div>
                 <label>De</label>
-                <select>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                </select>
+                <select id="desde"></select>
             </div>
             <div>
                 <label>A</label>
-                <select>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                </select>
+                <select id="hacia"></select>
             </div>
         </div>
 
-        <button type="button">Convertir</button>
+        <button type="button" onclick="convertir()">Convertir</button>
 
-        <div class="resultado">Resultado</div>
+        <div class="resultado" id="resultado">Resultado</div>
     </div>
+    <script src="temperaturas.js"></script>
 </body>
 </html>
