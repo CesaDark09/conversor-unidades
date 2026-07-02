@@ -21,13 +21,22 @@ function actualizarUnidades() {
 
 function convertirTemperatura(valor, de, a) {
     let celsius;
-    if (de === 'Celsius') celsius = valor;
-    if (de === 'Fahrenheit') celsius = (valor - 32) * 5 / 9;
-    if (de === 'Kelvin') celsius = valor - 273.15;
+    if (de === 'Celsius') {
+        celsius = valor;
+    } else if (de === 'Fahrenheit') {
+        // Hotfix: fórmula correcta de Fahrenheit a Celsius
+        celsius = (valor - 32) * 5 / 9;
+    } else if (de === 'Kelvin') {
+        celsius = valor - 273.15;
+    }
 
-    if (a === 'Celsius') return celsius;
-    if (a === 'Fahrenheit') return celsius * 9 / 5 + 32;
-    if (a === 'Kelvin') return celsius + 273.15;
+    if (a === 'Celsius') {
+        return celsius;
+    } else if (a === 'Fahrenheit') {
+        return celsius * 9 / 5 + 32;
+    } else if (a === 'Kelvin') {
+        return celsius + 273.15;
+    }
 
     return null;
 }
